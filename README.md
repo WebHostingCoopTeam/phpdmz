@@ -18,9 +18,11 @@ will enter the Docker container
 
 as an example I will include a compromised file we recently found on one of our servers
 
-```
-cat MALICIOUS-error.php.tar.gz.crypt|openssl des3 -d -salt|tar -xvz
-```
+once you are in the container `cd /var/www` and there is shell script in there that will open the encrypted file
+
+once the file is unencrypted, you can view what the evildoer was trying to obscure with his substitution cipher and all the base64 encoding
+
+http://127.0.0.1:$PORT/MALICIOUS-error.php
 
 
 ##debug.php
