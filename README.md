@@ -35,3 +35,13 @@ the next time it is hit it will make a new temporary file in /tmp and log what i
 
 be carefull this can potentially fill /tmp if the traffic is heavy
 
+# Encrypting files
+
+The first file was encrypted with the password thusly 
+```
+tar czf - MALICIOUS-error.php|openssl des3 -salt >MALICIOUS-error1.php.tar.gz.crypt
+```
+I then place the password in a file of the same name with a suffix of ‘.password’
+```
+MALICIOUS-error.php.tar.gz.crypt.password
+```
