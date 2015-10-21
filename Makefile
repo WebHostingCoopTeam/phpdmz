@@ -23,14 +23,14 @@ builddocker:
 	/usr/bin/time -v docker build -t joshuacox/phpdmz .
 
 kill:
-	@docker kill `cat cid`
+	-@docker kill `cat cid`
 
 rm-name:
 	rm  name
 
 rm-image:
-	@docker rm `cat cid`
-	@rm cid
+	-@docker rm `cat cid`
+	-@rm cid
 
 rm: kill rm-image
 
